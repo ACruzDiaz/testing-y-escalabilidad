@@ -76,21 +76,24 @@ GET /api/mocks/mockingusers
   },
   ...
 ]
+```
 
+## Ejemplo: Endpoint `/generateData`
 
-Ejemplo: Endpoint /generateData
-
-Solicitud (POST):
+**Solicitud (POST):**
 POST /api/mocks/generateData
 
+```json
 {
   "users": 10,
   "pets": 15
 }
+```
 
+**Respuesta:**
 
-Respuesta:
-
+```json
 {
   "message": "Se han insertado 10 usuarios y 15 registros de mascotas exitosamente."
 }
+```
