@@ -1,4 +1,3 @@
-import swaggerJsDoc from "swagger-jsdoc";
 import { userPaths } from "../docs/user/user.path.js";
 import { userDocSchema } from "../docs/user/user.schema.js";
 import { petPaths } from "../docs/pets/pets.path.js";
@@ -39,5 +38,3 @@ export const swaggerOptions = {
     }
   }
 };
-
-// export const specs = swaggerJsDoc(swaggerOptions);

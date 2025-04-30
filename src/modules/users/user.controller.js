@@ -1,5 +1,4 @@
 import { request, response } from "express";
-import { generateUsersMocks } from "../../mock/user.mock.js";
 import { userService } from "./user.service.js";
 import { NotFoundError } from "../../common/errors/errors.js";
 

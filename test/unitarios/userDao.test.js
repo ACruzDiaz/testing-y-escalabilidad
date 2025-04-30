@@ -3,9 +3,6 @@ import { userDao } from "../../src/modules/users/user.dao.js";
 import { expect } from "chai";
 import { before, after } from "mocha";
 
-// Conexión con la base de datos
-
-
 // Descripción del tes
 describe("===== TEST USERDAO =====", () => {
   let userTest;
@@ -13,10 +10,7 @@ describe("===== TEST USERDAO =====", () => {
   // Función que se ejecuta antes de iniciar todos los test
   before( async () => {
     await mongoose.connect('mongodb://localhost:27017/');
-    
   });
-
-
 
   //Describir tara del test
   it("Debe retornar un array de usuarios", async () => {
@@ -83,9 +77,7 @@ describe("===== TEST USERDAO =====", () => {
 
   it("Debe eliminar un usuario", async () => {
     await userDao.remove(userTest._id);
-
     const user = await userDao.getOne({ _id: userTest._id });
-
     expect(user).to.be.null;
   });
 
