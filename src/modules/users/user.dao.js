@@ -13,6 +13,10 @@ class UserDao {
   async getOne(query) {
     return await userModel.findOne(query).populate("pets");
   }
+  
+  async getById(id){
+    return await userModel.findById(id).populate("pets");
+  }
 
   async update(id, data) {
     return await userModel.findByIdAndUpdate(id, data, { new: true });

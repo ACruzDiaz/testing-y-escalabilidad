@@ -1,11 +1,7 @@
 import { generateUsersMocks } from "../../mock/user.mock.js";
-import { userDao } from "./mongo/user.dao.js";
+import { userDao } from "./user.dao.js";
 
 class UserService{
-
-  async getAll() {
-    return await userDao.getAll()
-  }
   async createUsersMocks(amount){
     const users = generateUsersMocks(amount);
 
@@ -16,6 +12,21 @@ class UserService{
     }
 
     return users;
+  }
+
+  async update(id, body){
+    return await userDao.update(id, body)
+  }
+
+  async getAll(){
+    return await userDao.getAll();
+  }
+  async remove(id){
+    return await userDao.remove(id);
+  }
+
+  async getById(id){
+    return await userDao.getById(id)
   }
 
 

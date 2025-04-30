@@ -1,80 +1,40 @@
-2025-03-31 18:01:42 [[31merror[39m]: Status: 500 [GET] /api/mocks/mockingusers - msg: Cast to ObjectId failed for value "mockingusers" (type string) at path "_id" for model "pets"
-2025-03-31 18:01:42 [[31merror[39m]: {
+2025-04-28 21:54:53 [[31merror[39m]: Status: 500 [PUT] /api/users/67eb48f42566028749e92f2f - msg: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: petscoder.users index: email_1 dup key: { email: "rq@example.com" }
+2025-04-28 21:54:53 [[31merror[39m]: {
   "statusCode": 500,
   "files": [
-    "CastError: Cast to ObjectId failed for value \"mockingusers\" (type string) at path \"_id\" for model \"pets\"",
-    "    at SchemaObjectId.cast (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\schema\\objectId.js:251:11)",
-    "    at SchemaType.applySetters (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\schemaType.js:1255:12)",
-    "    at SchemaType.castForQuery (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\schemaType.js:1673:17)",
-    "    at cast (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\cast.js:390:32)",
-    "    at Query.cast (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\query.js:4907:12)",
-    "    at Query._castConditions (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\query.js:2325:10)",
-    "    at model.Query._findOne (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\query.js:2648:8)",
-    "    at model.Query.exec (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\mongoose\\lib\\query.js:4456:80)",
+    "MongoServerError: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: petscoder.users index: email_1 dup key: { email: \"rq@example.com\" }",
+    "    at Connection.sendCommand (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\cmap\\connection.js:299:27)",
     "    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
-    "    at async PetDao.getOne (file:///C:/Users/danta/testing_y_escalabilidad/src/modules/pets/mongo/pet.dao.js:14:12)"
+    "    at async Connection.command (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\cmap\\connection.js:327:26)",
+    "    at async Server.command (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\sdam\\server.js:168:29)",
+    "    at async FindOneAndUpdateOperation.executeCommand (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\operations\\command.js:76:16)",
+    "    at async FindOneAndUpdateOperation.execute (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\operations\\find_and_modify.js:85:24)",
+    "    at async tryOperation (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:207:20)",
+    "    at async executeOperation (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\operations\\execute_operation.js:75:16)",
+    "    at async Collection.findOneAndUpdate (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongodb\\lib\\collection.js:500:16)",
+    "    at async model.Query._findOneAndUpdate (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\query.js:3475:13)"
   ],
-  "message": "Cast to ObjectId failed for value \"mockingusers\" (type string) at path \"_id\" for model \"pets\"",
-  "path": "/api/mocks/mockingusers",
-  "method": "GET"
+  "message": "Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: petscoder.users index: email_1 dup key: { email: \"rq@example.com\" }",
+  "path": "/api/users/67eb48f42566028749e92f2f",
+  "method": "PUT"
 }
-2025-03-31 18:39:08 [[31merror[39m]: Status: 500 [POST] /api/generateData - msg: res.status is not a function
-2025-03-31 18:39:08 [[31merror[39m]: {
+2025-04-29 08:31:34 [[31merror[39m]: Status: 500 [POST] /api/pets - msg: pets validation failed: birthDate: Cast to date failed for value "10-12-2020T07:00:00.000Z" (type string) at path "birthDate"
+2025-04-29 08:31:34 [[31merror[39m]: {
   "statusCode": 500,
   "files": [
-    "TypeError: res.status is not a function",
-    "    at generateData (file:///C:/Users/danta/testing_y_escalabilidad/src/common/mocks.controller.js:21:9)",
-    "    at Layer.handleRequest (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\layer.js:152:17)",
-    "    at next (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\route.js:157:13)",
-    "    at Route.dispatch (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\route.js:117:3)",
-    "    at handle (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:435:11)",
-    "    at Layer.handleRequest (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\layer.js:152:17)",
-    "    at C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:295:15",
-    "    at processParams (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:582:12)",
-    "    at next (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:291:5)",
-    "    at Function.handle (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:186:3)"
+    "ValidationError: pets validation failed: birthDate: Cast to date failed for value \"10-12-2020T07:00:00.000Z\" (type string) at path \"birthDate\"",
+    "    at Document.invalidate (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\document.js:3351:32)",
+    "    at model.$set (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\document.js:1480:12)",
+    "    at model.$set (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\document.js:1132:16)",
+    "    at model.Document (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\document.js:178:12)",
+    "    at model.Model (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\model.js:128:12)",
+    "    at new model (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\model.js:4800:15)",
+    "    at C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\model.js:2759:20",
+    "    at Array.map (<anonymous>)",
+    "    at Function.create (C:\\Users\\danta\\testing_y_escalabilidad_proyecto\\backend-70360\\clase-14\\node_modules\\mongoose\\lib\\model.js:2747:34)",
+    "    at PetDao.create (file:///C:/Users/danta/testing_y_escalabilidad_proyecto/backend-70360/clase-14/src/modules/pets/pet.dao.js:6:27)"
   ],
-  "message": "res.status is not a function",
-  "path": "/api/generateData",
-  "method": "POST"
-}
-2025-03-31 18:39:59 [[31merror[39m]: Status: 500 [POST] /api/generateData - msg: res.status is not a function
-2025-03-31 18:39:59 [[31merror[39m]: {
-  "statusCode": 500,
-  "files": [
-    "TypeError: res.status is not a function",
-    "    at generateData (file:///C:/Users/danta/testing_y_escalabilidad/src/common/mocks.controller.js:21:9)",
-    "    at Layer.handleRequest (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\layer.js:152:17)",
-    "    at next (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\route.js:157:13)",
-    "    at Route.dispatch (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\route.js:117:3)",
-    "    at handle (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:435:11)",
-    "    at Layer.handleRequest (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\layer.js:152:17)",
-    "    at C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:295:15",
-    "    at processParams (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:582:12)",
-    "    at next (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:291:5)",
-    "    at Function.handle (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:186:3)"
-  ],
-  "message": "res.status is not a function",
-  "path": "/api/generateData",
-  "method": "POST"
-}
-2025-03-31 18:41:33 [[31merror[39m]: Status: 500 [POST] /api/generateData - msg: res.status is not a function
-2025-03-31 18:41:33 [[31merror[39m]: {
-  "statusCode": 500,
-  "files": [
-    "TypeError: res.status is not a function",
-    "    at generateData (file:///C:/Users/danta/testing_y_escalabilidad/src/common/mocks.controller.js:21:9)",
-    "    at Layer.handleRequest (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\layer.js:152:17)",
-    "    at next (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\route.js:157:13)",
-    "    at Route.dispatch (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\route.js:117:3)",
-    "    at handle (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:435:11)",
-    "    at Layer.handleRequest (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\lib\\layer.js:152:17)",
-    "    at C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:295:15",
-    "    at processParams (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:582:12)",
-    "    at next (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:291:5)",
-    "    at Function.handle (C:\\Users\\danta\\testing_y_escalabilidad\\node_modules\\router\\index.js:186:3)"
-  ],
-  "message": "res.status is not a function",
-  "path": "/api/generateData",
+  "message": "pets validation failed: birthDate: Cast to date failed for value \"10-12-2020T07:00:00.000Z\" (type string) at path \"birthDate\"",
+  "path": "/api/pets",
   "method": "POST"
 }
